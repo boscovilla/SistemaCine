@@ -11,6 +11,6 @@ namespace Dominio
         public string Apellido { get; set; }
         public string Nacionalidad { get; set; }
 
-        public ICollection<Reparto> RepartoLista { get; set; }
+        public Reparto Reparto { get; set; }
     }
 }

@@ -1,11 +1,10 @@
 ﻿
+using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Persistencia;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dominio;
 
 
 namespace WebAPI.Controllers
@@ -24,9 +23,17 @@ namespace WebAPI.Controllers
 
         [HttpGet]
 
-        public IEnumerable<Actor> Get()
+        public IEnumerable<Actor> GetActor()
         {
             return context.Actor.ToList();
+        }
+
+        public async Task<ActionResult<Actor>> CreateActor(Actor createActor)
+        {
+            context.Actor.Add(createActor);
+            await context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetActor), new Actor {ActorId = createActor.ActorId}, createActor);
         }
     }
 }

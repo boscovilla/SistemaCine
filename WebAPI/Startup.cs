@@ -1,19 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Persistencia;
-
-
 
 namespace WebAPI
 {
@@ -36,11 +27,20 @@ namespace WebAPI
                 });
 
             services.AddControllers();
+
+            services.AddCors(); // Agregamos servicio para que un cliente pueda consumir el api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options =>
+            {
+                options.WithOrigins("http://localhost:3000"); // agregamos url del local para que el cliente consuma el api
+                options.AllowAnyMethod(); // damos permiso de consumir cualquier metodo
+                options.AllowAnyHeader(); // y desde cualquier encabeazdo
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

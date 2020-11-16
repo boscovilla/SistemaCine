@@ -7,7 +7,6 @@ namespace Dominio
 {
     public class Funcion
     {
-
         public int FuncionId { get; set; }
         public string DiaSemana { get; set; }
        

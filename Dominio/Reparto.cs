@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Dominio
 {
@@ -9,8 +7,7 @@ namespace Dominio
         public int RepartoId { get; set; }
         public int ActorId { get; set; }
         public int PeliculaId { get; set; }
-
         public Pelicula Pelicula { get; set; }
-        public Actor Actor { get; set; }
+        public ICollection<Actor> Actores { get; set; }
     }
 }
