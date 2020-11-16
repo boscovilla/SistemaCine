@@ -28,5 +28,23 @@ namespace WebAPI.Controllers
         {
             return context.Programacion.ToList();
         }
+
+        //POST. Programaciones/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateActor(Programacion createProgramacion)
+        {
+
+            context.Programacion.Add(createProgramacion);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Programacion { ProgramacionId = createProgramacion.ProgramacionId },
+                createProgramacion);
+
+
+
+        }
+
+
     }
 }

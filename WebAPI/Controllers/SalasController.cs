@@ -28,5 +28,21 @@ namespace WebAPI.Controllers
         {
             return context.Sala.ToList();
         }
+
+        //POST. Salas/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateSala(Sala createSala)
+        {
+
+            context.Sala.Add(createSala);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Sala { SalaId = createSala.SalaId },
+                createSala);
+
+
+
+        }
     }
 }

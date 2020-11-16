@@ -28,5 +28,21 @@ namespace WebAPI.Controllers
         {
             return context.Reparto.ToList();
         }
+
+        //POST. Repartos/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateReparto(Reparto createReparto)
+        {
+
+            context.Reparto.Add(createReparto);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Reparto { RepartoId = createReparto.RepartoId },
+                createReparto);
+
+
+
+        }
     }
 }

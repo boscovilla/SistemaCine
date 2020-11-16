@@ -1,10 +1,12 @@
 ﻿
-using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dominio;
+
 
 
 namespace WebAPI.Controllers
@@ -23,17 +25,26 @@ namespace WebAPI.Controllers
 
         [HttpGet]
 
-        public IEnumerable<Actor> GetActor()
+        public IEnumerable<Actor> Get()
         {
             return context.Actor.ToList();
         }
 
-        public async Task<ActionResult<Actor>> CreateActor(Actor createActor)
+        //POST. Actores/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateActor(Actor createActor)
         {
-            context.Actor.Add(createActor);
-            await context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetActor), new Actor {ActorId = createActor.ActorId}, createActor);
+            
+                context.Actor.Add(createActor);
+                await context.SaveChangesAsync();
+                return CreatedAtAction(nameof(Get),
+                    new Actor { ActorId = createActor.ActorId },
+                    createActor);
+            
         }
+
+
     }
+    
 }

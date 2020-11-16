@@ -28,5 +28,21 @@ namespace WebAPI.Controllers
         {
             return context.Genero.ToList();
         }
+
+        //POST. Genero/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateGenero(Genero createGenero)
+        {
+
+            context.Genero.Add(createGenero);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Genero { GeneroId = createGenero.GeneroId },
+                createGenero);
+
+
+
+        }
     }
 }

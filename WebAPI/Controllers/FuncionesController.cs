@@ -28,5 +28,21 @@ namespace WebAPI.Controllers
         {
             return context.Funcion.ToList();
         }
+
+        //POST. Funcion/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateFuncion(Funcion createFuncion)
+        {
+
+            context.Funcion.Add(createFuncion);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Funcion { FuncionId = createFuncion.FuncionId },
+                createFuncion);
+
+
+
+        }
     }
 }

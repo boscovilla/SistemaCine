@@ -28,5 +28,21 @@ namespace WebAPI.Controllers
         {
             return context.Cine.ToList();
         }
+
+        //POST. Cines/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateCine(Cine createCine)
+        {
+
+            context.Cine.Add(createCine);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Cine { CineId = createCine.CineId },
+                createCine);
+
+
+
+        }
     }
 }
