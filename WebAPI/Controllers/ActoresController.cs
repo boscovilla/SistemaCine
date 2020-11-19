@@ -44,6 +44,21 @@ namespace WebAPI.Controllers
             
         }
 
+        // DELETE: Actores/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteActor(int Id)
+        {
+            var deleteActor = await context.Actor.FindAsync(Id);
+            if (deleteActor == null)
+            {
+                return NotFound();
+            }
+
+            context.Actor.Remove(deleteActor);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
 
     }
     

@@ -44,5 +44,21 @@ namespace WebAPI.Controllers
 
 
         }
+
+        // DELETE: Peliculas/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deletePelicula(int PeliculaId)
+        {
+            var deletePelicula = await context.Pelicula.FindAsync(PeliculaId);
+            if (deletePelicula == null)
+            {
+                return NotFound();
+            }
+
+            context.Pelicula.Remove(deletePelicula);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

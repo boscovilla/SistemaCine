@@ -44,5 +44,21 @@ namespace WebAPI.Controllers
 
 
         }
+
+        // DELETE: Genero/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteGenero(int GeneroId)
+        {
+            var deleteGenero = await context.Genero.FindAsync(GeneroId);
+            if (deleteGenero == null)
+            {
+                return NotFound();
+            }
+
+            context.Genero.Remove(deleteGenero);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

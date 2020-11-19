@@ -45,6 +45,20 @@ namespace WebAPI.Controllers
 
         }
 
+        // DELETE: Programaciones/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteProgramacion(int ProgramacionId)
+        {
+            var deleteProgramacion = await context.Programacion.FindAsync(ProgramacionId);
+            if (deleteProgramacion == null)
+            {
+                return NotFound();
+            }
 
+            context.Programacion.Remove(deleteProgramacion);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

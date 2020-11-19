@@ -44,5 +44,21 @@ namespace WebAPI.Controllers
 
 
         }
+
+        // DELETE: Salas/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteSala(int SalaId)
+        {
+            var deleteSala = await context.Sala.FindAsync(SalaId);
+            if (deleteSala == null)
+            {
+                return NotFound();
+            }
+
+            context.Sala.Remove(deleteSala);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

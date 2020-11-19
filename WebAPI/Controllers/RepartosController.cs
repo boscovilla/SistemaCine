@@ -44,5 +44,21 @@ namespace WebAPI.Controllers
 
 
         }
+
+        // DELETE: Repartos/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteReparto(int RepartoId)
+        {
+            var deleteReparto = await context.Reparto.FindAsync(RepartoId);
+            if (deleteReparto == null)
+            {
+                return NotFound();
+            }
+
+            context.Reparto.Remove(deleteReparto);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

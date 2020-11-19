@@ -44,5 +44,21 @@ namespace WebAPI.Controllers
 
 
         }
+
+        // DELETE: Funcion/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteFuncion(int FuncionId)
+        {
+            var deleteFuncion = await context.Funcion.FindAsync(FuncionId);
+            if (deleteFuncion == null)
+            {
+                return NotFound();
+            }
+
+            context.Funcion.Remove(deleteFuncion);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

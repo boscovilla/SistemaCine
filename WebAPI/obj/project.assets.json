@@ -6104,24 +6104,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
+    "C:\\Users\\julio\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\TAREA DISTRIBUIDOS\\SistemaCine\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\julio\\Source\\Repos\\SistemaCine\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\Lenovo\\Desktop\\TAREA DISTRIBUIDOS\\SistemaCine\\WebAPI\\WebAPI.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lenovo\\Desktop\\TAREA DISTRIBUIDOS\\SistemaCine\\WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\julio\\Source\\Repos\\SistemaCine\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\julio\\Source\\Repos\\SistemaCine\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6133,8 +6136,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Lenovo\\Desktop\\TAREA DISTRIBUIDOS\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "C:\\Users\\Lenovo\\Desktop\\TAREA DISTRIBUIDOS\\SistemaCine\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\julio\\Source\\Repos\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\julio\\Source\\Repos\\SistemaCine\\Aplicacion\\Aplicacion.csproj"
             }
           }
         }
@@ -6187,7 +6190,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

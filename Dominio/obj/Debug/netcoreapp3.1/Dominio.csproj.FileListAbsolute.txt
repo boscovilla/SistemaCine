@@ -16,3 +16,12 @@ C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Dominio\obj\Debug\netcore
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\bin\Debug\netcoreapp3.1\Dominio.deps.json
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.csprojAssemblyReference.cache
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfoInputs.cache
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfo.cs
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\julio\Source\Repos\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb

@@ -44,5 +44,21 @@ namespace WebAPI.Controllers
 
 
         }
+
+        // DELETE: Horario/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> deleteHorarioFuncion(int HorarioFuncionId)
+        {
+            var deleteHorarioFuncion = await context.HorarioFuncion.FindAsync(HorarioFuncionId);
+            if (deleteHorarioFuncion == null)
+            {
+                return NotFound();
+            }
+
+            context.HorarioFuncion.Remove(deleteHorarioFuncion);
+            await context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }
