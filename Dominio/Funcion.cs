@@ -1,7 +1,10 @@
-﻿namespace Dominio
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Dominio
 {
     public class Funcion
     {
+        [Key]
         public int FuncionId { get; set; }
         public string DiaSemana { get; set; }
         public string HoraInicio { get; set; }

@@ -1,12 +1,11 @@
-﻿
+﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dominio;
-
 
 namespace WebAPI.Controllers
 {
@@ -18,12 +17,10 @@ namespace WebAPI.Controllers
         public PeliculasController(SistemaCineContext _context)
         {
             this.context = _context;
-
         }
 
-
+        // GET Peliculas
         [HttpGet]
-
         public IEnumerable<Pelicula> Get()
         {
             return context.Pelicula.ToList();
@@ -45,20 +42,58 @@ namespace WebAPI.Controllers
 
         }
 
-        // DELETE: Peliculas/id
+        // DELETE: Pelicula/id
         [HttpDelete("{id}")]
-        public async Task<IActionResult> deletePelicula(int PeliculaId)
+        public async Task<IActionResult> DeletePelicula(int Id)
         {
-            var deletePelicula = await context.Pelicula.FindAsync(PeliculaId);
-            if (deletePelicula == null)
+            var deleteMovie = await context.Pelicula.FindAsync(Id);
+            if (deleteMovie == null)
             {
                 return NotFound();
             }
 
-            context.Pelicula.Remove(deletePelicula);
-            await context.SaveChangesAsync();
+            try
+            {
+                context.Pelicula.Remove(deleteMovie);
+                await context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception err)
+            {
+                return (IActionResult)err;
+            }
+        }
 
-            return NoContent();
+        // PUT: Pelicula/id
+        [HttpPut("{id}")]
+        public async Task<Pelicula> UpdatePelicula(int id, [FromBody] Pelicula movie)
+        {
+            var findMovie = await context.Pelicula.Where(c => c.PeliculaId == id)
+                .FirstOrDefaultAsync();
+            try
+            {
+                if (findMovie == null)
+                {
+                    throw new SystemException();
+                }
+                else
+                {
+                    findMovie.Nombre = movie.Nombre;
+                    findMovie.Duracion = movie.Duracion;
+                    findMovie.Sinopsis = movie.Sinopsis;
+                    findMovie.Director = movie.Director;
+                    findMovie.FechaEstreno = movie.FechaEstreno;
+                    findMovie.Disponible = movie.Disponible;
+                    findMovie.RepartoLista = movie.RepartoLista;
+                    findMovie.FuncionLista = movie.FuncionLista;
+                    await context.SaveChangesAsync();
+                }
+                return await Task.FromResult(findMovie);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

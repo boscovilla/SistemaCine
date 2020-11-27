@@ -1,12 +1,11 @@
-﻿
+﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dominio;
-
 
 namespace WebAPI.Controllers
 {
@@ -18,13 +17,11 @@ namespace WebAPI.Controllers
         public HorariosFuncionesController(SistemaCineContext _context)
         {
             this.context = _context;
-
         }
 
-
+        // GET Horarios
         [HttpGet]
-
-        public IEnumerable<HorarioFuncion> Get()
+        public IEnumerable<HorarioFuncion> GetHorario()
         {
             return context.HorarioFuncion.ToList();
         }
@@ -34,31 +31,61 @@ namespace WebAPI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateHorarioFuncion(HorarioFuncion createHorario)
         {
-
             context.HorarioFuncion.Add(createHorario);
             await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get),
+            return CreatedAtAction(nameof(GetHorario),
                 new HorarioFuncion { HorarioFuncionId = createHorario.HorarioFuncionId },
                 createHorario);
-
-
-
         }
 
-        // DELETE: Horario/id
+        // DELETE: Actor/id
         [HttpDelete("{id}")]
-        public async Task<IActionResult> deleteHorarioFuncion(int HorarioFuncionId)
+        public async Task<IActionResult> DeleteHorario(int Id)
         {
-            var deleteHorarioFuncion = await context.HorarioFuncion.FindAsync(HorarioFuncionId);
-            if (deleteHorarioFuncion == null)
+            var deleteHorario = await context.HorarioFuncion.FindAsync(Id);
+            if (deleteHorario == null)
             {
                 return NotFound();
             }
 
-            context.HorarioFuncion.Remove(deleteHorarioFuncion);
-            await context.SaveChangesAsync();
+            try
+            {
+                context.HorarioFuncion.Remove(deleteHorario);
+                await context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception err)
+            {
+                return (IActionResult)err;
+            }
+        }
 
-            return NoContent();
+        // PUT: HorarioFuncion/id
+        [HttpPut("{id}")]
+        public async Task<HorarioFuncion> UpdateHorario(int id, [FromBody] HorarioFuncion horario)
+        {
+            var findHorario = await context.HorarioFuncion.Where(c => c.HorarioFuncionId == id)
+                .FirstOrDefaultAsync();
+            try
+            {
+                if (findHorario == null)
+                {
+                    throw new SystemException();
+                }
+                else
+                {
+                    findHorario.DuracionIntervalo = horario.DuracionIntervalo;
+                    findHorario.DuracionPublicidad = horario.DuracionPublicidad;
+                    findHorario.HoraPrimeraFuncion = horario.HoraPrimeraFuncion;
+                    findHorario.HoraUltimaFuncion = horario.HoraUltimaFuncion;
+                    await context.SaveChangesAsync();
+                }
+                return await Task.FromResult(findHorario);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

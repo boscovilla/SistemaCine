@@ -6,6 +6,7 @@ namespace Dominio
 {
     public class Pelicula
     {
+        [Key]
         public int PeliculaId { get; set; }
         public string Nombre { get; set; }
         public string Duracion { get; set; }
@@ -17,9 +18,7 @@ namespace Dominio
         public bool Disponible { get; set; }
         public int GeneroId { get; set; }
         public Genero Genero { get; set; }
-        public Reparto Reparto { get; set; }
-        public int RepartoId { get; set; }
-        public Funcion Funcion { get; set; }
-        public ICollection<Funcion> Funciones { get; set; }
+        public ICollection<Reparto> RepartoLista { get; set; }
+        public ICollection<Funcion> FuncionLista { get; set; }
     }
 }

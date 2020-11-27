@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
@@ -9,7 +10,6 @@ namespace Dominio
 
         public string TipoGenero { get; set; }
         public string Descripcion { get; set; }
-        public Pelicula Pelicula { get; set; }
-        public int PeliculaId { get; set; }
+        public ICollection<Pelicula> Pelicula { get; set; }
     }
 }

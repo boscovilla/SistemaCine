@@ -1,12 +1,11 @@
-﻿
+﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dominio;
-
 
 namespace WebAPI.Controllers
 {
@@ -18,12 +17,10 @@ namespace WebAPI.Controllers
         public RepartosController(SistemaCineContext _context)
         {
             this.context = _context;
-
         }
 
-
+        // GET Repartos
         [HttpGet]
-
         public IEnumerable<Reparto> Get()
         {
             return context.Reparto.ToList();
@@ -34,31 +31,81 @@ namespace WebAPI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateReparto(Reparto createReparto)
         {
-
             context.Reparto.Add(createReparto);
             await context.SaveChangesAsync();
             return CreatedAtAction(nameof(Get),
                 new Reparto { RepartoId = createReparto.RepartoId },
                 createReparto);
-
-
-
         }
 
-        // DELETE: Repartos/id
+        // DELETE: Reparto/id
         [HttpDelete("{id}")]
-        public async Task<IActionResult> deleteReparto(int RepartoId)
+        public async Task<IActionResult> DeleteReparto(int Id)
         {
-            var deleteReparto = await context.Reparto.FindAsync(RepartoId);
+            var deleteReparto = await context.Reparto.FindAsync(Id);
             if (deleteReparto == null)
             {
                 return NotFound();
             }
 
-            context.Reparto.Remove(deleteReparto);
-            await context.SaveChangesAsync();
+            try
+            {
+                context.Reparto.Remove(deleteReparto);
+                await context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception err)
+            {
+                return (IActionResult)err;
+            }
+        }
 
-            return NoContent();
+        // DELETE: Reparto/id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteActor(int Id)
+        {
+            var deleteReparto = await context.Reparto.FindAsync(Id);
+            if (deleteReparto == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                context.Reparto.Remove(deleteReparto);
+                await context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception err)
+            {
+                return (IActionResult)err;
+            }
+        }
+
+        // PUT: Reparto/id
+        [HttpPut("{id}")]
+        public async Task<Reparto> UpdateActor(int id, [FromBody] Reparto reparto)
+        {
+            var findReparto = await context.Reparto.Where(c => c.RepartoId == id)
+                .FirstOrDefaultAsync();
+            try
+            {
+                if (findReparto == null)
+                {
+                    throw new SystemException();
+                }
+                else
+                {
+                    findReparto.ActorId = reparto.ActorId;
+                    findReparto.PeliculaId = reparto.PeliculaId;
+                    await context.SaveChangesAsync();
+                }
+                return await Task.FromResult(findReparto);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

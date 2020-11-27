@@ -5,6 +5,7 @@ namespace Dominio
 {
     public class HorarioFuncion
     {
+        [Key]
         public int HorarioFuncionId { get; set; }
         public string DuracionIntervalo { get; set; }
         public string DuracionPublicidad { get; set; }
