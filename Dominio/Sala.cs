@@ -10,8 +10,8 @@ namespace Dominio
         public int Capacidad { get; set; }
         public string Numero { get; set; }
         public string CineId { get; set; }
-
         public Cine Cine { get; set; }
-        public ICollection<Funcion> FuncionLista { get; set; }
+        public Funcion Funcion { get; set; }
+        public ICollection<Funcion> Funciones { get; set; }
     }
 }

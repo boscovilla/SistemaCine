@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Dominio
 {
     public class Genero
     {
+        [Key]
         public int GeneroId { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
 
-        public ICollection<Pelicula> Pelicula { get; set; }
+        public string TipoGenero { get; set; }
+        public string Descripcion { get; set; }
+        public Pelicula Pelicula { get; set; }
+        public int PeliculaId { get; set; }
     }
 }

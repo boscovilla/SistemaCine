@@ -1,13 +1,9 @@
-﻿
+﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Persistencia;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dominio;
-
-
 
 namespace WebAPI.Controllers
 {
@@ -22,9 +18,8 @@ namespace WebAPI.Controllers
 
         }
 
-
+        // GET Actores 
         [HttpGet]
-
         public IEnumerable<Actor> Get()
         {
             return context.Actor.ToList();
@@ -35,13 +30,13 @@ namespace WebAPI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateActor(Actor createActor)
         {
-            
-                context.Actor.Add(createActor);
-                await context.SaveChangesAsync();
-                return CreatedAtAction(nameof(Get),
-                    new Actor { ActorId = createActor.ActorId },
-                    createActor);
-            
+
+            context.Actor.Add(createActor);
+            await context.SaveChangesAsync();
+            return CreatedAtAction(nameof(Get),
+                new Actor { ActorId = createActor.ActorId },
+                createActor);
+
         }
 
         // DELETE: Actores/id
@@ -61,5 +56,5 @@ namespace WebAPI.Controllers
         }
 
     }
-    
+
 }
