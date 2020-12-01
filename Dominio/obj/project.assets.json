@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
+      "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
       "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\obj\\",
+      "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

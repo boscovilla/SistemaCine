@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj": {}
+    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
+    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj",
+        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj",
         "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\obj\\",
+        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,11 +32,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
+              "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
               },
-              "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj"
+              "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -49,6 +49,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[9.3.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -60,6 +70,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -68,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -125,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj": {
+    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
+        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
         "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\obj\\",
+        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -153,8 +166,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
+              "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -202,14 +215,14 @@
         }
       }
     },
-    "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -230,8 +243,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
-                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj"
+              "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
+                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj"
               }
             }
           }
@@ -250,6 +263,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [

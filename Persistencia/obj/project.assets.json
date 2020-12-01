@@ -5695,11 +5695,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
+      "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
       "projectName": "Persistencia",
-      "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
+      "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
       "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\obj\\",
+      "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -5720,8 +5720,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
+            "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
             }
           }
         }

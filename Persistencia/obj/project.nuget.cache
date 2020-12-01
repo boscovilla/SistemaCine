@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EM/GhybP4JM6+SvXCcImaa14PiqkR7rtb7ytOl3rPO6msaAPk28s85Je3VxdcaqcKrT6qv1knACvAtzs9zSdaQ==",
+  "dgSpecHash": "mP4vpLycDq6MLAy6zvd+/MPfna/MRQR3Q3puL5wlcOjh3b5+tMukg4WshIYsNCpPSWMr70Z/q36waumQt4GdzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JUAN BOSCO\\Desktop\\TRABAJOS uU 2S\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
+  "projectFilePath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
