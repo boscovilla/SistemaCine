@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Aplicacion.ManejadorError;
-using Dominio;
-using FluentValidation;
+﻿using Aplicacion.ManejadorError;
 using MediatR;
 using Persistencia;
+using System;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Aplicacion.Generos
 {
@@ -19,32 +15,22 @@ namespace Aplicacion.Generos
             public int GeneroId { get; set; }
             public string Nombre { get; set; }
             public string Descripcion { get; set; }
-
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
         {
-
-
             public readonly SistemaCineContext _context;
-
-
             public Manejador(SistemaCineContext context)
             {
                 _context = context;
-
             }
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-
                 var genero = await _context.Genero.FindAsync(request.GeneroId);
-
-
-                if(genero == null)
+                if (genero == null)
                 {
                     //   throw new Exception("El Genero No Existe");
                     throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el curso" });
-
                 }
 
                 genero.Nombre = request.Nombre ?? genero.Nombre;
@@ -53,19 +39,12 @@ namespace Aplicacion.Generos
                 var resultado = await _context.SaveChangesAsync();
 
                 if (resultado > 0)
-                    {
+                {
                     return Unit.Value;
-
                 }
 
                 throw new Exception("No se guardaron los cambios en los generos");
-
-
-
             }
         }
-
-
-
     }
 }

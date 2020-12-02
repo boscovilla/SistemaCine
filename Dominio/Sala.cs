@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Dominio
 {
@@ -10,7 +8,6 @@ namespace Dominio
         public int Capacidad { get; set; }
         public string Numero { get; set; }
         public string CineId { get; set; }
-
         public Cine Cine { get; set; }
         public ICollection<Funcion> FuncionLista { get; set; }
     }

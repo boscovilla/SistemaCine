@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Dominio
 {
@@ -10,7 +8,6 @@ namespace Dominio
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Nacionalidad { get; set; }
-
         public ICollection<Reparto> RepartoLista { get; set; }
     }
 }

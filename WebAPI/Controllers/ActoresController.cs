@@ -1,12 +1,10 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dominio;
-
 
 namespace WebAPI.Controllers
 {
@@ -18,15 +16,17 @@ namespace WebAPI.Controllers
         public ActoresController(SistemaCineContext _context)
         {
             this.context = _context;
-
         }
 
-
         [HttpGet]
-
-        public IEnumerable<Actor> Get()
+        public IEnumerable<Actor> GetActors()
         {
             return context.Actor.ToList();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Actor>> GetActorById (int id)
+        {
         }
     }
 }
