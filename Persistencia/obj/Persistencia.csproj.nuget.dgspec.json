@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj": {}
+    "C:\\Users\\julio\\source\\repos\\SistemaCine\\Persistencia\\Persistencia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\julio\\source\\repos\\SistemaCine\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\obj\\",
+        "projectPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JUAN BOSCO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -57,25 +57,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj": {
+    "C:\\Users\\julio\\source\\repos\\SistemaCine\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\Persistencia.csproj",
-        "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Persistencia\\obj\\",
+        "projectPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Persistencia\\Persistencia.csproj",
+        "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JUAN BOSCO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -89,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Dominio\\Dominio.csproj"
+              "C:\\Users\\julio\\source\\repos\\SistemaCine\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -134,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

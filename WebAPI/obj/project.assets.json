@@ -1446,10 +1446,7 @@
         },
         "runtime": {
           "bin/placeholder/Aplicacion.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Dominio/1.0.0": {
         "type": "project",
@@ -5450,25 +5447,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\": {},
+    "C:\\Users\\julio\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\julio\\source\\repos\\SistemaCine\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\WebAPI.csproj",
-      "packagesPath": "C:\\Users\\JUAN BOSCO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\WebAPI\\WebAPI.csproj",
+      "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\JUAN BOSCO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5482,8 +5479,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "C:\\Users\\JUAN BOSCO\\Desktop\\Universidad\\JORGE\\Sistema Cine Proyecto Final\\SistemaCine\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\julio\\source\\repos\\SistemaCine\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\julio\\source\\repos\\SistemaCine\\Aplicacion\\Aplicacion.csproj"
             }
           }
         }
@@ -5526,7 +5523,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
