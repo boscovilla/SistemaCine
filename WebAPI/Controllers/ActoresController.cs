@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dominio;
+using Microsoft.AspNetCore.Mvc;
 using Persistencia;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dominio;
 
 namespace WebAPI.Controllers
 {
@@ -25,8 +24,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Actor>> GetActorById (int id)
+        public async Task<ActionResult<Actor>> GetActorById(int id)
         {
+            return default;
         }
     }
 }
