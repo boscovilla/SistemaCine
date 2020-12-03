@@ -1,12 +1,11 @@
-﻿using Dominio;
-using FluentValidation;
+﻿using Dominio.Entities;
 using MediatR;
 using Persistencia;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Generos
+namespace Aplicacion.Commands.Generos
 {
     public class Nuevo
     {
@@ -14,15 +13,6 @@ namespace Aplicacion.Generos
         {
             public string Nombre { get; set; }
             public string Descripcion { get; set; }
-        }
-
-        public class EjecutaValidacion : AbstractValidator<Ejecuta>
-        {
-            public EjecutaValidacion()
-            {
-                RuleFor(x => x.Nombre).NotEmpty();
-            }
-
         }
 
         public class Manejador : IRequestHandler<Ejecuta>

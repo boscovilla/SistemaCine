@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Generos
+namespace Aplicacion.Commands.Generos
 {
     public class Editar
     {

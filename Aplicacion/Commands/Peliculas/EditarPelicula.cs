@@ -1,4 +1,5 @@
 ﻿using Aplicacion.ManejadorError;
+using Dominio.Entities;
 using MediatR;
 using Persistencia;
 using System;
@@ -6,13 +7,14 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Generos
+namespace Aplicacion.Commands.Peliculas
 {
-    public class Eliminar
+    public class EditarPelicula
     {
         public class Ejecuta : IRequest
         {
-            public int Id { get; set; }
+            public int PeliculaId { get; set; }
+            public bool Disponible { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -25,24 +27,24 @@ namespace Aplicacion.Generos
 
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var genero = await _context.Genero.FindAsync(request.Id);
+                var movie = await _context.Pelicula.FindAsync(request.PeliculaId);
 
-                if (genero == null)
+                if (movie == null)
                 {
-                    //throw new Exception("No se encontro el genero");
-                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el curso" });
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { movie = "No se encontro la pelicula" });
                 }
 
-                _context.Remove(genero);
+                movie.Disponible = request.Disponible;
+                var result = await _context.SaveChangesAsync();
 
-                var resultado = await _context.SaveChangesAsync();
-
-                if (resultado > 0)
+                if (result > 0)
                 {
                     return Unit.Value;
                 }
-
-                throw new Exception("No se pudieron realizar los cambios");
+                else
+                {
+                    throw new Exception("Error al actualizar");
+                }
             }
         }
     }

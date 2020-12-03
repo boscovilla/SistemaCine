@@ -1,12 +1,12 @@
 ﻿using Aplicacion.ManejadorError;
-using Dominio;
+using Dominio.Entities;
 using MediatR;
 using Persistencia;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Generos
+namespace Aplicacion.Commands.Generos
 {
     public class ConsultaId
     {

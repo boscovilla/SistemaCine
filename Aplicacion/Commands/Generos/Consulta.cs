@@ -1,4 +1,4 @@
-﻿using Dominio;
+﻿using Dominio.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
@@ -6,12 +6,12 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Actors
+namespace Aplicacion.Commands.Generos
 {
     public class Consulta
     {
-        public class ListaActores : IRequest<List<Actor>> { }
-        public class Manejador : IRequestHandler<ListaActores, List<Actor>>
+        public class ListaGeneros : IRequest<List<Genero>> { }
+        public class Manejador : IRequestHandler<ListaGeneros, List<Genero>>
         {
             private readonly SistemaCineContext _context;
 
@@ -20,10 +20,10 @@ namespace Aplicacion.Actors
                 _context = context;
             }
 
-            public async Task<List<Actor>> Handle(ListaActores request, CancellationToken cancellationToken)
+            public async Task<List<Genero>> Handle(ListaGeneros request, CancellationToken cancellationToken)
             {
-                var actores = await _context.Actor.ToListAsync();
-                return actores;
+                var generos = await _context.Genero.ToListAsync();
+                return generos;
             }
         }
     }
