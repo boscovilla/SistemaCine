@@ -1,5 +1,4 @@
 ﻿using Aplicacion.ManejadorError;
-using Dominio.Entities;
 using MediatR;
 using Persistencia;
 using System;
