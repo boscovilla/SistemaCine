@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Generos
+namespace Aplicacion.Funciones
 {
     public class Eliminar
     {
@@ -17,7 +17,7 @@ namespace Aplicacion.Generos
         public class Ejecuta : IRequest
         {
             public int Id { get; set; }
-      
+
         }
 
 
@@ -32,15 +32,15 @@ namespace Aplicacion.Generos
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
 
-                var genero = await _context.Genero.FindAsync(request.Id);
+                var funcion = await _context.Funcion.FindAsync(request.Id);
 
-                if (genero == null)
+                if (funcion == null)
                 {
                     //throw new Exception("No se encontro el genero");
-                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el curso" });
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { funcion = "No se encontro la funcion" });
                 }
 
-                _context.Remove(genero);
+                _context.Remove(funcion);
 
                 var resultado = await _context.SaveChangesAsync();
 

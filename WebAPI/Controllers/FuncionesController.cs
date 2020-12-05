@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dominio;
-
+using MediatR;
+using Aplicacion.Funciones;
 
 namespace WebAPI.Controllers
 {
@@ -14,19 +15,19 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class FuncionesController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public FuncionesController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public FuncionesController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
 
         }
 
 
         [HttpGet]
 
-        public IEnumerable<Funcion> Get()
+        public async Task<ActionResult<List<Funcion>>> Get()
         {
-            return context.Funcion.ToList();
+            return await _mediator.Send(new Consulta.ListaFunciones());
         }
     }
 }

@@ -10,17 +10,16 @@ using FluentValidation;
 using MediatR;
 using Persistencia;
 
-
-namespace Aplicacion.Generos
+namespace Aplicacion.Funciones
 {
     public class Editar
     {
         public class Ejecuta : IRequest
         {
-            public int GeneroId { get; set; }
-            public string Nombre { get; set; }
-            public string Descripcion { get; set; }
-
+            public int FuncionId { get; set; }
+            public string DiaSemana { get; set; }
+            public string HoraInicio { get; set; }
+            public string Duracion { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -30,20 +29,22 @@ namespace Aplicacion.Generos
             public Manejador(SistemaCineContext context)
             {
                 _context = context;
-
             }
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
 
-                var genero = await _context.Genero.FindAsync(request.GeneroId);
+                var funcion = await _context.Funcion.FindAsync(request.FuncionId);
 
-                if (genero == null)
+
+                if (funcion == null)
                 {
-                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { genero = "No se encontro el genero" });
+
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { funcion = "No se encontro la funcion" });
                 }
 
-                genero.Nombre = request.Nombre ?? genero.Nombre;
-                genero.Descripcion = request.Descripcion ?? genero.Descripcion;
+                funcion.DiaSemana = request.DiaSemana ?? funcion.DiaSemana;
+                funcion.HoraInicio = request.HoraInicio ?? funcion.HoraInicio;
+                funcion.Duracion = request.Duracion ?? funcion.Duracion;
 
                 var resultado = await _context.SaveChangesAsync();
 
@@ -51,9 +52,9 @@ namespace Aplicacion.Generos
                 {
                     return Unit.Value;
                 }
+
                 throw new Exception("No se guardaron los cambios en los generos");
             }
         }
     }
 }
-
