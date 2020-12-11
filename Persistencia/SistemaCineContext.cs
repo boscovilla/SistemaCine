@@ -1,4 +1,5 @@
 ﻿using Dominio;
+using Dominio.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;

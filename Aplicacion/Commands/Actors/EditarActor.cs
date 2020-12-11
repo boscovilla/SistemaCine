@@ -16,11 +16,13 @@ namespace Aplicacion.Commands.Actors
             [Required]
             public int ActorId { get; set; }
             [Required]
-            public string Name { get; set; }
+            public string Nombre { get; set; }
             [Required]
-            public string LastName { get; set; }
+            public string Apellido { get; set; }
             [Required]
-            public string Nacionality { get; set; }
+            public string Nacionalidad { get; set; }
+            [Required]
+            public int Eddad { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -38,9 +40,10 @@ namespace Aplicacion.Commands.Actors
                 {
                     throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { actor = "No se encontro el actor" });
                 }
-                actor.Nombre = request.Name ?? actor.Nombre;
-                actor.Apellido = request.LastName ?? actor.Apellido;
-                actor.Nacionalidad = request.Nacionality ?? actor.Nacionalidad;
+                actor.Nombre = request.Nombre ?? actor.Nombre;
+                actor.Apellido = request.Apellido ?? actor.Apellido;
+                actor.Nacionalidad = request.Nacionalidad ?? actor.Nacionalidad;
+                actor.Edad = request.Eddad;
 
                 var result = await _context.SaveChangesAsync();
 

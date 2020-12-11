@@ -7,15 +7,19 @@ namespace Aplicacion.Validators
     {
         public ActorValidator()
         {
-            RuleFor(c => c.Name)
+            RuleFor(c => c.Nombre)
                 .NotEmpty()
                 .NotNull();
 
-            RuleFor(c => c.LastName)
+            RuleFor(c => c.Apellido)
                 .NotNull()
                 .NotEmpty();
 
-            RuleFor(c => c.Nacionality)
+            RuleFor(c => c.Nacionalidad)
+                .NotEmpty()
+                .NotNull();
+
+            RuleFor(c => c.Edad)
                 .NotEmpty()
                 .NotNull();
         }

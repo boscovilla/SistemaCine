@@ -6,7 +6,7 @@ namespace Dominio.Entities
 {
     public class Programacion
     {
-        public Guid ProgramacionId { get; set; }
+        public int ProgramacionId { get; set; }
         [DataType(DataType.Date)]
         public DateTime FechaInicio { get; set; }
         [DataType(DataType.Date)]
