@@ -8,14 +8,13 @@ namespace Dominio
     public class Funcion
     {
 
-        public int FuncionId { get; set; }
+        public Guid FuncionId { get; set; }
         public string DiaSemana { get; set; }
-       
         public string HoraInicio { get; set; }
         public string Duracion { get; set; }
-        public int PeliculaId { get; set; }
-        public int ProgramacionId { get; set; }
-        public int SalaId { get; set; }
+        public Guid PeliculaId { get; set; }
+        public Guid ProgramacionId { get; set; }
+        public Guid SalaId { get; set; }
 
         public Programacion ProgramacionL { get; set; }
         public Pelicula Pelicula { get; set; }

@@ -6,7 +6,7 @@ namespace Dominio
 {
     public class Actor
     {
-        public int ActorId { get; set; }
+        public Guid ActorId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Nacionalidad { get; set; }

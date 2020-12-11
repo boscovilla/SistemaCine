@@ -13,6 +13,6 @@ C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\Sistem
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.csprojAssemblyReference.cache
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfoInputs.cache
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.AssemblyInfo.cs
-C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.dll
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Dominio\obj\Debug\netcoreapp3.1\Dominio.csproj.CoreCompileInputs.cache
