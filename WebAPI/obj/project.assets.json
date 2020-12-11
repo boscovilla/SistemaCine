@@ -1446,10 +1446,7 @@
         },
         "runtime": {
           "bin/placeholder/Aplicacion.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Dominio/1.0.0": {
         "type": "project",

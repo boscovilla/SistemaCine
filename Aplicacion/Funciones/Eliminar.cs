@@ -1,40 +1,46 @@
 ﻿using Aplicacion.ManejadorError;
+using Dominio;
 using MediatR;
 using Persistencia;
 using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Commands.Generos
+namespace Aplicacion.Funciones
 {
     public class Eliminar
     {
+
         public class Ejecuta : IRequest
         {
-            [Required]
             public int Id { get; set; }
+
         }
+
 
         public class Manejador : IRequestHandler<Ejecuta>
         {
             private readonly SistemaCineContext _context;
+
             public Manejador(SistemaCineContext context)
             {
                 _context = context;
             }
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var genero = await _context.Genero.FindAsync(request.Id);
 
-                if (genero == null)
+                var funcion = await _context.Funcion.FindAsync(request.Id);
+
+                if (funcion == null)
                 {
                     //throw new Exception("No se encontro el genero");
-                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el curso" });
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { funcion = "No se encontro la funcion" });
                 }
 
-                _context.Genero.Remove(genero);
+                _context.Remove(funcion);
 
                 var resultado = await _context.SaveChangesAsync();
 
