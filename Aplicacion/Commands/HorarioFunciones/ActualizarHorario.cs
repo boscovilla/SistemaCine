@@ -13,11 +13,16 @@ namespace Aplicacion.Commands.HorarioFunciones
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int HorarioFuncionId { get; set; }
+            [Required]
             public string DuracionIntervalo { get; set; }
+            [Required]
             public string DuracionPublicidad { get; set; }
+            [Required]
             [DataType(DataType.Date)]
             public DateTime HoraPrimeraFuncion { get; set; }
+            [Required]
             [DataType(DataType.Date)]
             public DateTime HoraUltimaFuncion { get; set; }
         }

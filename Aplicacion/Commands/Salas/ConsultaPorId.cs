@@ -2,6 +2,7 @@
 using Dominio.Entities;
 using MediatR;
 using Persistencia;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Aplicacion.Commands.Salas
     {
         public class Ejecuta : IRequest<Sala>
         {
+            [Required]
             public int Id { get; set; }
         }
 

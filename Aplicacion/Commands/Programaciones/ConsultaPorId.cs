@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using Aplicacion.ManejadorError;
 using System.Net;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aplicacion.Commands.Programaciones
 {
@@ -15,6 +16,7 @@ namespace Aplicacion.Commands.Programaciones
     {
         public class Ejecuta : IRequest<Programacion>
         {
+            [Required]
             public int Id { get; set; }
         }
 

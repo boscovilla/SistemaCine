@@ -2,6 +2,7 @@
 using MediatR;
 using Persistencia;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,8 +13,11 @@ namespace Aplicacion.Commands.Generos
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int GeneroId { get; set; }
+            [Required]
             public string Nombre { get; set; }
+            [Required]
             public string Descripcion { get; set; }
         }
 

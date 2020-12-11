@@ -12,7 +12,6 @@ namespace Aplicacion.Commands.Programaciones
     {
         public class Ejecuta : IRequest
         {
-            public int ProgramacionId { get; set; }
             [DataType(DataType.Date)]
             public DateTime FechaInicio { get; set; }
             [DataType(DataType.Date)]

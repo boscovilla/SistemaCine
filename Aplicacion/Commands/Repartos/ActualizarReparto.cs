@@ -2,6 +2,7 @@
 using MediatR;
 using Persistencia;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,8 +13,11 @@ namespace Aplicacion.Commands.Repartos
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int RepartoId { get; set; }
+            [Required]
             public int ActorId { get; set; }
+            [Required]
             public int PeliculaId { get; set; }
         }
 

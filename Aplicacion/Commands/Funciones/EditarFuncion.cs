@@ -3,6 +3,7 @@ using Dominio.Entities;
 using MediatR;
 using Persistencia;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,11 +14,17 @@ namespace Aplicacion.Commands.Funciones
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int FuncionId { get; set; }
+            [Required]
             public string DiaSemana { get; set; }
+            [Required]
             public string HoraInicio { get; set; }
+            [Required]
             public int PeliculaId { get; set; }
+            [Required]
             public int ProgramacionId { get; set; }
+            [Required]
             public int SalaId { get; set; }
         }
 

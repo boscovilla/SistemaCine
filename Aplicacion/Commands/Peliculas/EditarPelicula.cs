@@ -2,6 +2,7 @@
 using MediatR;
 using Persistencia;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace Aplicacion.Commands.Peliculas
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int PeliculaId { get; set; }
+            [Required]
             public bool Disponible { get; set; }
         }
 

@@ -10,6 +10,7 @@ namespace Aplicacion.Commands.Peliculas
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int PeliculaId { get; set; }
         }
 

@@ -2,6 +2,7 @@
 using MediatR;
 using Persistencia;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,9 +13,13 @@ namespace Aplicacion.Commands.Actors
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int ActorId { get; set; }
+            [Required]
             public string Name { get; set; }
+            [Required]
             public string LastName { get; set; }
+            [Required]
             public string Nacionality { get; set; }
         }
 

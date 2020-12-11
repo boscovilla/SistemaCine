@@ -2,6 +2,7 @@
 using Dominio.Entities;
 using MediatR;
 using Persistencia;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Aplicacion.Commands.Actors
     {
         public class ActorUnico : IRequest<Actor>
         {
+            [Required]
             public int ActorId { get; set; }
         }
 

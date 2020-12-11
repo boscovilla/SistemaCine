@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -15,9 +16,13 @@ namespace Aplicacion.Commands.Cines
     {
         public class Ejecuta : IRequest
         {
+            [Required]
             public int CineId { get; set; }
+            [Required]
             public string NombreCine { get; set; }
+            [Required]
             public string Direccion { get; set; }
+            [Required]
             public string PrecioEntradaGeneral { get; set; }
         }
 

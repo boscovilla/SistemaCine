@@ -2,6 +2,7 @@
 using Dominio.Entities;
 using MediatR;
 using Persistencia;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Aplicacion.Commands.Peliculas
     {
         public class PeliculaUnica : IRequest<Pelicula>
         {
+            [Required]
             public int PeliculaId { get; set; }
         }
 
