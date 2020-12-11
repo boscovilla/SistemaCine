@@ -1,20 +1,27 @@
-﻿using Dominio.Entities;
+﻿using Dominio;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+
 
 namespace Persistencia
 {
-    public class SistemaCineContext : DbContext
+   public class SistemaCineContext: IdentityDbContext<Usuario>
     {
 
-        public SistemaCineContext(DbContextOptions options) : base(options)
+        public SistemaCineContext(DbContextOptions options): base (options)
         {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating (ModelBuilder modelBuilder) 
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Reparto>().HasKey(r => new { r.ActorId, r.PeliculaId });
         }
-
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Pelicula> Pelicula { get; set; }
         public DbSet<Genero> Genero { get; set; }
         public DbSet<Actor> Actor { get; set; }
@@ -24,6 +31,9 @@ namespace Persistencia
         public DbSet<Sala> Sala { get; set; }
         public DbSet<Cine> Cine { get; set; }
         public DbSet<HorarioFuncion> HorarioFuncion { get; set; }
+
+
+
 
     }
 }
