@@ -1,90 +1,53 @@
-﻿using Dominio;
+﻿using Aplicacion.Commands.Generos;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistencia;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
-    [ApiController]
+
     [Route("api/[controller]")]
+    [ApiController]
     public class GenerosController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public GenerosController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public GenerosController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        //GET Generos
         [HttpGet]
-        public IEnumerable<Genero> GetGenero()
+        public async Task<ActionResult<List<Genero>>> Get()
         {
-            return context.Genero.ToList();
+            return await _mediator.Send(new Consulta.ListaGeneros());
         }
 
-        //POST. Genero/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Genero>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaId.GeneroUnico { Id = id });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateGenero(Genero createGenero)
+        public async Task<ActionResult<Unit>> Crear(Nuevo.Ejecuta data)
         {
-            context.Genero.Add(createGenero);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetGenero),
-                new Genero { GeneroId = createGenero.GeneroId },
-                createGenero);
+            return await _mediator.Send(data);
         }
 
-        // DELETE: Genero/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteGenero(int Id)
-        {
-            var deleteGenero = await context.Genero.FindAsync(Id);
-            if (deleteGenero == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Genero.Remove(deleteGenero);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Genero/id
         [HttpPut("{id}")]
-        public async Task<Genero> UpdateGenero(int id, [FromBody] Genero genero)
+        public async Task<ActionResult<Unit>> Editar(int id, Editar.Ejecuta data)
         {
-            var findGenero = await context.Genero.Where(c => c.GeneroId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findGenero == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findGenero.TipoGenero = genero.TipoGenero;
-                    findGenero.Descripcion = genero.Descripcion;
-                    findGenero.Pelicula = genero.Pelicula;
-                    await context.SaveChangesAsync();
-                }
-                return await Task.FromResult(findGenero);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.GeneroId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new Eliminar.Ejecuta { Id = id });
         }
     }
+
 }

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dominio
+namespace Dominio.Entities
 {
     public class Pelicula
     {
-        [Key]
         public int PeliculaId { get; set; }
         public string Nombre { get; set; }
         public string Duracion { get; set; }

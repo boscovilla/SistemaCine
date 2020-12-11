@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Dominio
+namespace Dominio.Entities
 {
     public class Sala
     {
-        [Key]
         public int SalaId { get; set; }
         public int Capacidad { get; set; }
         public string Numero { get; set; }

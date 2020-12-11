@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Dominio
+namespace Dominio.Entities
 {
     public class HorarioFuncion
     {
-        [Key]
         public int HorarioFuncionId { get; set; }
         public string DuracionIntervalo { get; set; }
         public string DuracionPublicidad { get; set; }

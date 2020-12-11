@@ -12,6 +12,20 @@ C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\Sis
 C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csproj.CopyComplete
 C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.dll
 C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.pdb
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.deps.json
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.dll
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.pdb
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Persistencia.dll
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Persistencia.pdb
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csprojAssemblyReference.cache
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.AssemblyInfoInputs.cache
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.AssemblyInfo.cs
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csproj.CoreCompileInputs.cache
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csproj.CopyComplete
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.dll
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.pdb
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.deps.json
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.dll
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.pdb
@@ -26,17 +40,3 @@ C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\obj\Debug\netc
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csproj.CopyComplete
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.dll
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.pdb
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.deps.json
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.dll
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Aplicacion.pdb
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Dominio.dll
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Persistencia.dll
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Dominio.pdb
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\bin\Debug\netcoreapp3.1\Persistencia.pdb
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csprojAssemblyReference.cache
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.AssemblyInfoInputs.cache
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.AssemblyInfo.cs
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csproj.CoreCompileInputs.cache
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.csproj.CopyComplete
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.dll
-C:\Users\julio\Source\Repos\SistemaCine\Aplicacion\obj\Debug\netcoreapp3.1\Aplicacion.pdb

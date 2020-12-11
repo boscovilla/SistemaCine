@@ -1,10 +1,8 @@
-﻿using Dominio;
+﻿using Aplicacion.Commands.Peliculas;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistencia;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -13,87 +11,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class PeliculasController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public PeliculasController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public PeliculasController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        // GET Peliculas
         [HttpGet]
-        public IEnumerable<Pelicula> Get()
+        public async Task<ActionResult<List<Pelicula>>> Get()
         {
-            return context.Pelicula.ToList();
+            return await _mediator.Send(new ConsultaPelicula.ListaPeliculas());
         }
 
-        //POST. Peliculas/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Pelicula>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaPeliculaPorId.PeliculaUnica { PeliculaId = id });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreatePeliculas(Pelicula createPelicula)
+        public async Task<ActionResult<Unit>> Crear(NuevaPelicula.Ejecuta data)
         {
-
-            context.Pelicula.Add(createPelicula);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get),
-                new Pelicula { PeliculaId = createPelicula.PeliculaId },
-                createPelicula);
-
-
-
+            return await _mediator.Send(data);
         }
 
-        // DELETE: Pelicula/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePelicula(int Id)
-        {
-            var deleteMovie = await context.Pelicula.FindAsync(Id);
-            if (deleteMovie == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Pelicula.Remove(deleteMovie);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Pelicula/id
         [HttpPut("{id}")]
-        public async Task<Pelicula> UpdatePelicula(int id, [FromBody] Pelicula movie)
+        public async Task<ActionResult<Unit>> Editar(int id, EditarPelicula.Ejecuta data)
         {
-            var findMovie = await context.Pelicula.Where(c => c.PeliculaId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findMovie == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findMovie.Nombre = movie.Nombre;
-                    findMovie.Duracion = movie.Duracion;
-                    findMovie.Sinopsis = movie.Sinopsis;
-                    findMovie.Director = movie.Director;
-                    findMovie.FechaEstreno = movie.FechaEstreno;
-                    findMovie.Disponible = movie.Disponible;
-                    findMovie.RepartoLista = movie.RepartoLista;
-                    findMovie.FuncionLista = movie.FuncionLista;
-                    await context.SaveChangesAsync();
-                }
-                return await Task.FromResult(findMovie);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.PeliculaId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminaPelicula.Ejecuta { PeliculaId = id });
         }
     }
 }

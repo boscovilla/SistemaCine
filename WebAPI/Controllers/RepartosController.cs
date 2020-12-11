@@ -1,11 +1,11 @@
-﻿using Dominio;
+﻿using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Persistencia;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Aplicacion.Commands.Repartos;
 
 namespace WebAPI.Controllers
 {
@@ -13,99 +13,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class RepartosController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public RepartosController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public RepartosController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        // GET Repartos
         [HttpGet]
-        public IEnumerable<Reparto> Get()
+        public async Task<ActionResult<List<Reparto>>> Get()
         {
-            return context.Reparto.ToList();
+            return await _mediator.Send(new ConsultarRepartos.ListaReparto());
         }
 
-        //POST. Repartos/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Reparto>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaPorId.Ejecuta { Id = id });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateReparto(Reparto createReparto)
+        public async Task<ActionResult<Unit>> Crear(AgregarReparto.Ejecuta data)
         {
-            context.Reparto.Add(createReparto);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get),
-                new Reparto { RepartoId = createReparto.RepartoId },
-                createReparto);
+            return await _mediator.Send(data);
         }
 
-        // DELETE: Reparto/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteReparto(int Id)
-        {
-            var deleteReparto = await context.Reparto.FindAsync(Id);
-            if (deleteReparto == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Reparto.Remove(deleteReparto);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // DELETE: Reparto/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteActor(int Id)
-        {
-            var deleteReparto = await context.Reparto.FindAsync(Id);
-            if (deleteReparto == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Reparto.Remove(deleteReparto);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Reparto/id
         [HttpPut("{id}")]
-        public async Task<Reparto> UpdateActor(int id, [FromBody] Reparto reparto)
+        public async Task<ActionResult<Unit>> Editar(int id, ActualizarReparto.Ejecuta data)
         {
-            var findReparto = await context.Reparto.Where(c => c.RepartoId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findReparto == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findReparto.ActorId = reparto.ActorId;
-                    findReparto.PeliculaId = reparto.PeliculaId;
-                    await context.SaveChangesAsync();
-                }
-                return await Task.FromResult(findReparto);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.RepartoId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminarReparto.Ejecuta { Id = id });
         }
     }
 }

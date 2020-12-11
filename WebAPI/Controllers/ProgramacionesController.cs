@@ -1,10 +1,8 @@
-﻿using Dominio;
+﻿using Aplicacion.Commands.Programaciones;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistencia;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -13,78 +11,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class ProgramacionesController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public ProgramacionesController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public ProgramacionesController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        // GET Programaciones
         [HttpGet]
-        public IEnumerable<Programacion> Get()
+        public async Task<ActionResult<List<Programacion>>> Get()
         {
-            return context.Programacion.ToList();
+            return await _mediator.Send(new Consulta.ListaProgramacion());
         }
 
-        // POST Programacion/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Programacion>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaPorId.Ejecuta { Id = id });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateActor(Programacion createProgramacion)
+        public async Task<ActionResult<Unit>> Crear(AgregarProgramacion.Ejecuta data)
         {
-            context.Programacion.Add(createProgramacion);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get),
-                new Programacion { ProgramacionId = createProgramacion.ProgramacionId },
-                createProgramacion);
+            return await _mediator.Send(data);
         }
 
-        // DELETE Programacion/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProgramacion(int Id)
-        {
-            var deleteProgramacion = await context.Programacion.FindAsync(Id);
-            if (deleteProgramacion == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Programacion.Remove(deleteProgramacion);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Actor/id
         [HttpPut("{id}")]
-        public async Task<Programacion> UpdateProgramacion(int id, [FromBody] Programacion programacion)
+        public async Task<ActionResult<Unit>> Editar(int id, ActualizarProgramacion.Ejecuta data)
         {
-            var findProgramacion = await context.Programacion.Where(c => c.ProgramacionId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findProgramacion == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findProgramacion.FechaInicio = programacion.FechaInicio;
-                    findProgramacion.FechaFin = programacion.FechaFin;
-                    findProgramacion.Funciones = programacion.Funciones;
-                    await context.SaveChangesAsync();
-                }
-                return await Task.FromResult(findProgramacion);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.ProgramacionId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminarProgramacion.Ejecuta { Id = id });
         }
     }
 }

@@ -1,10 +1,8 @@
-﻿using Dominio;
+﻿using Aplicacion.Commands.Funciones;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistencia;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -13,78 +11,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class FuncionesController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public FuncionesController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public FuncionesController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        // GET Funciones
         [HttpGet]
-        public IEnumerable<Funcion> GetFunciones()
+        public async Task<ActionResult<List<Funcion>>> Get()
         {
-            return context.Funcion.ToList();
+            return await _mediator.Send(new ConsultaFuncion.ListaFuncion());
         }
 
-        //POST. Funcion/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Funcion>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultarFuncionPorId.FuncionUnica { FuncionId = id });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateFuncion(Funcion createFuncion)
+        public async Task<ActionResult<Unit>> Crear(AgregarFuncion.Ejecuta data)
         {
-            context.Funcion.Add(createFuncion);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetFunciones),
-                new Funcion { FuncionId = createFuncion.FuncionId },
-                createFuncion);
+            return await _mediator.Send(data);
         }
 
-        // DELETE: Funcion/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteFuncion(int Id)
-        {
-            var deleteFuncion = await context.Funcion.FindAsync(Id);
-            if (deleteFuncion == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Funcion.Remove(deleteFuncion);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Funcion/id
         [HttpPut("{id}")]
-        public async Task<Funcion> UpdateFuncion(int id, [FromBody] Funcion funcion)
+        public async Task<ActionResult<Unit>> Editar(int id, EditarFuncion.Ejecuta data)
         {
-            var findFuncion = await context.Funcion.Where(c => c.FuncionId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findFuncion == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findFuncion.DiaSemana = funcion.DiaSemana;
-                    findFuncion.HoraInicio = funcion.HoraInicio;
-                    findFuncion.Duracion = funcion.Duracion;
-                    await context.SaveChangesAsync();
-                }
-                return await Task.FromResult(findFuncion);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.FuncionId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminarFuncion.Ejecuta { FuncionId = id });
         }
     }
 }

@@ -1,10 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Dominio
+﻿namespace Dominio.Entities
 {
     public class Funcion
     {
-        [Key]
         public int FuncionId { get; set; }
         public string DiaSemana { get; set; }
         public string HoraInicio { get; set; }
@@ -12,7 +9,7 @@ namespace Dominio
         public int PeliculaId { get; set; }
         public int ProgramacionId { get; set; }
         public int SalaId { get; set; }
-        public Programacion Programacion { get; set; }
+        public Programacion ProgramacionL { get; set; }
         public Pelicula Pelicula { get; set; }
         public Sala Sala { get; set; }
     }

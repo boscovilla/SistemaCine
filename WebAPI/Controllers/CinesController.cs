@@ -1,10 +1,8 @@
-﻿using Dominio;
+﻿using Aplicacion.Commands.Cines;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistencia;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -13,80 +11,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class CinesController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public CinesController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public CinesController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        // GET Cines
         [HttpGet]
-        public IEnumerable<Cine> GetCine()
+        public async Task<ActionResult<List<Cine>>> Get()
         {
-            return context.Cine.ToList();
+            return await _mediator.Send(new ConsultaCine.ListaCine());
         }
 
-        //POST Cines/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cine>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaCinePorId.CineUnico { CineId = id });
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateCine(Cine createCine)
+        public async Task<ActionResult<Unit>> Crear(CrearCine.Ejecuta data)
         {
-            context.Cine.Add(createCine);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetCine),
-                new Cine { CineId = createCine.CineId },
-                createCine);
+            return await _mediator.Send(data);
         }
 
-        // DELETE: Cine/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteActor(int Id)
-        {
-            var deleteCine = await context.Cine.FindAsync(Id);
-            if (deleteCine == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Cine.Remove(deleteCine);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Cine/id
         [HttpPut("{id}")]
-        public async Task<Cine> UpdateCine(int id, [FromBody] Cine cine)
+        public async Task<ActionResult<Unit>> Editar(int id, EditarCine.Ejecuta data)
         {
-            var findCine = await context.Cine.Where(c => c.CineId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findCine == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findCine.Nombre = cine.Nombre;
-                    findCine.Direccion = cine.Direccion;
-                    findCine.PrecioEntradaGeneral = cine.PrecioEntradaGeneral;
-                    findCine.SalaLista = cine.SalaLista;
-                    findCine.ProgramacionLista = cine.ProgramacionLista;
-                    findCine.HorarioFuncionLista = cine.HorarioFuncionLista;
-                }
-                return await Task.FromResult(findCine);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.CineId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminarCine.Ejecuta { CineId = id });
         }
     }
 }

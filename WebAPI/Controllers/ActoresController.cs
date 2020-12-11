@@ -1,10 +1,8 @@
-﻿using Dominio;
+﻿using Aplicacion.Commands.Actors;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistencia;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -13,78 +11,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class ActoresController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public ActoresController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public ActoresController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
-        // GET Actores 
         [HttpGet]
-        public IEnumerable<Actor> GetActor()
+        public async Task<ActionResult<List<Actor>>> Get()
         {
-            return context.Actor.ToList();
+            return await _mediator.Send(new ConsultaActor.ListaActores());
         }
 
-        //POST. Actor/Create
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Actor>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaActorPorId.ActorUnico { Id = id });
+        }
+
         [HttpPost]
-        public async Task<IActionResult> CreateActor(Actor createActor)
+        public async Task<ActionResult<Unit>> Crear(NuevoActor.Ejecutar data)
         {
-            context.Actor.Add(createActor);
-            await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetActor),
-                new Actor { ActorId = createActor.ActorId },
-                createActor);
+            return await _mediator.Send(data);
         }
 
-        // DELETE: Actor/id
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteActor(int Id)
-        {
-            var deleteActor = await context.Actor.FindAsync(Id);
-            if (deleteActor == null)
-            {
-                return NotFound();
-            }
-
-            try
-            {
-                context.Actor.Remove(deleteActor);
-                await context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception err)
-            {
-                return (IActionResult)err;
-            }
-        }
-
-        // PUT: Actor/id
         [HttpPut("{id}")]
-        public async Task<Actor> UpdateActor(int id, [FromBody] Actor actor)
+        public async Task<ActionResult<Unit>> Editar(int id, EditarActor.Ejecuta data)
         {
-            var findActor = await context.Actor.Where(c => c.ActorId == id)
-                .FirstOrDefaultAsync();
-            try
-            {
-                if (findActor == null)
-                {
-                    throw new SystemException();
-                }
-                else
-                {
-                    findActor.Nombre = actor.Nombre;
-                    findActor.Apellido = actor.Apellido;
-                    findActor.Nacionalidad = actor.Nacionalidad;
-                    findActor.Edad = actor.Edad;
-                    await context.SaveChangesAsync();
-                }
-                return await Task.FromResult(findActor);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            data.ActorId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminarActor.Ejecutar { ActorId = id });
         }
     }
 }

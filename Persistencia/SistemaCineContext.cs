@@ -1,13 +1,13 @@
-﻿using Dominio;
+﻿using Dominio.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistencia
 {
     public class SistemaCineContext : DbContext
     {
+
         public SistemaCineContext(DbContextOptions options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,5 +24,6 @@ namespace Persistencia
         public DbSet<Sala> Sala { get; set; }
         public DbSet<Cine> Cine { get; set; }
         public DbSet<HorarioFuncion> HorarioFuncion { get; set; }
+
     }
 }

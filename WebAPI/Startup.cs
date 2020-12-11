@@ -1,10 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Aplicacion.Generos;
+using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Persistencia;
+using WebAPI.MiddleWare;
 
 namespace WebAPI
 {
@@ -20,31 +31,33 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(); 
             services.AddDbContext<SistemaCineContext>
                 (opt =>
                 {
                     opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 });
-
-            services.AddControllers();
+            services.AddMediatR(typeof(Consulta.Manejador).Assembly);
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var baseUrl = $"http://localhost:3000"; // URL base de la aplicacion cliente
 
-            app.UseCors(options =>
-            {
-                options.WithOrigins(baseUrl);
-                options.AllowAnyMethod();
-                options.AllowAnyHeader();
-            });
+            app.UseMiddleware<ManejadorErrorMiddleWare>();
 
+            app.UseCors( opt =>
+                {
+                    opt.WithOrigins("http://localhost:3000");
+                    opt.AllowAnyMethod();
+                    opt.AllowAnyHeader();
+            }
+
+                );
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+              //  app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
