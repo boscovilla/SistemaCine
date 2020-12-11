@@ -1,4 +1,5 @@
 ﻿using Dominio;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Persistencia
 {
-   public class SistemaCineContext: DbContext
+   public class SistemaCineContext: IdentityDbContext<Usuario>
     {
 
         public SistemaCineContext(DbContextOptions options): base (options)
@@ -17,9 +18,10 @@ namespace Persistencia
 
         protected override void OnModelCreating (ModelBuilder modelBuilder) 
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Reparto>().HasKey(r => new { r.ActorId, r.PeliculaId });
         }
-        
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Pelicula> Pelicula { get; set; }
         public DbSet<Genero> Genero { get; set; }
         public DbSet<Actor> Actor { get; set; }

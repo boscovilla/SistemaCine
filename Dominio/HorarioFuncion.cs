@@ -8,7 +8,7 @@ namespace Dominio
     public class HorarioFuncion
     {
 
-        public int HorarioFuncionId { get; set; }
+        public Guid HorarioFuncionId { get; set; }
 
         
         public string DuracionIntervalo { get; set; }
@@ -21,7 +21,7 @@ namespace Dominio
         [DataType(DataType.Date)]
         public DateTime HoraUltimaFuncion { get; set; }
 
-        public int CineId { get; set; }
+        public Guid CineId { get; set; }
 
         public Cine Cine { get; set; }
 

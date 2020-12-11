@@ -6,7 +6,7 @@ namespace Dominio
 {
     public class Genero
     {
-        public int GeneroId { get; set; }
+        public Guid GeneroId { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 

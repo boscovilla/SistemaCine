@@ -23,8 +23,8 @@ C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\Sistem
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csprojAssemblyReference.cache
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfoInputs.cache
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfo.cs
-C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CoreCompileInputs.cache
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CopyComplete
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.dll
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.pdb
 C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.genruntimeconfig.cache
+C:\Users\JUAN BOSCO\Desktop\Universidad\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CoreCompileInputs.cache

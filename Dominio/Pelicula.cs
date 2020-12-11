@@ -9,7 +9,7 @@ namespace Dominio
     public class Pelicula
     {
 
-        public int PeliculaId { get; set; }
+        public Guid PeliculaId { get; set; }
         public string Nombre { get; set; }
 
         public string Duracion { get; set; }
@@ -21,7 +21,7 @@ namespace Dominio
         public string Categoria { get; set; }
 
         public bool Disponible { get; set; }
-        public int GeneroId { get; set; }
+        public Guid GeneroId { get; set; }
 
         public  Genero Genero { get; set; }
 

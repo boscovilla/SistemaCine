@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Programacion
     {
-        public int ProgramacionId { get; set; }
+        public Guid ProgramacionId { get; set; }
         [DataType(DataType.Date)]
         public DateTime FechaInicio { get; set; }
         [DataType(DataType.Date)]
