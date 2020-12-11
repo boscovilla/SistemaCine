@@ -27,3 +27,4 @@ C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\ne
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.dll
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.pdb
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CoreCompileInputs.cache

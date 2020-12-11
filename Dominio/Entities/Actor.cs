@@ -8,6 +8,7 @@ namespace Dominio.Entities
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Nacionalidad { get; set; }
+        public int Edad { get; set; }
         public ICollection<Reparto> RepartoLista { get; set; }
     }
 }

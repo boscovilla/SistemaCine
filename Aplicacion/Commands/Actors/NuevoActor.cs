@@ -11,9 +11,10 @@ namespace Aplicacion.Commands.Actors
     {
         public class Ejecutar : IRequest
         {
-            public string Name { get; set; }
-            public string LastName { get; set; }
-            public string Nacionality { get; set; }
+            public string Nombre { get; set; }
+            public string Apellido { get; set; }
+            public string Nacionalidad { get; set; }
+            public int Edad { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecutar>
@@ -28,9 +29,10 @@ namespace Aplicacion.Commands.Actors
             {
                 var actor = new Actor
                 {
-                    Nombre = request.Name,
-                    Apellido = request.LastName,
-                    Nacionalidad = request.Nacionality
+                    Nombre = request.Nombre,
+                    Apellido = request.Apellido,
+                    Nacionalidad = request.Nacionalidad,
+                    Edad = request.Edad
                 };
 
                 _context.Actor.Add(actor);

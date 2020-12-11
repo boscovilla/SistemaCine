@@ -26,7 +26,7 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Actor>> Detalle(int id)
         {
-            return await _mediator.Send(new ConsultaActorPorId.ActorUnico { Id = id });
+            return await _mediator.Send(new ConsultaActorPorId.ActorUnico { ActorId = id });
         }
 
         [HttpPost]
