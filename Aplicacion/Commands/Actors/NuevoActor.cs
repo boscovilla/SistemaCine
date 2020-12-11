@@ -27,7 +27,7 @@ namespace Aplicacion.Commands.Actors
 
             public async Task<Unit> Handle(Ejecutar request, CancellationToken cancellationToken)
             {
-                var actor = new Actor
+                var actor = new Actor()
                 {
                     Nombre = request.Nombre,
                     Apellido = request.Apellido,

@@ -22,7 +22,7 @@ namespace Aplicacion.Commands.Actors
             [Required]
             public string Nacionalidad { get; set; }
             [Required]
-            public int Edad { get; set; }
+            public int Eddad { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -43,7 +43,7 @@ namespace Aplicacion.Commands.Actors
                 actor.Nombre = request.Nombre ?? actor.Nombre;
                 actor.Apellido = request.Apellido ?? actor.Apellido;
                 actor.Nacionalidad = request.Nacionalidad ?? actor.Nacionalidad;
-                actor.Edad = request.Edad;
+                actor.Edad = request.Eddad;
 
                 var result = await _context.SaveChangesAsync();
 

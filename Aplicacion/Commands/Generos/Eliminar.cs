@@ -24,7 +24,6 @@ namespace Aplicacion.Commands.Generos
             {
                 _context = context;
             }
-
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var genero = await _context.Genero.FindAsync(request.Id);
