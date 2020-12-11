@@ -31,7 +31,7 @@ namespace Aplicacion.Commands.Actors
                     throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el actor" });
                 }
 
-                _context.Remove(actor);
+                _context.Actor.Remove(actor);
                 var result = await _context.SaveChangesAsync();
 
                 if (result > 0)

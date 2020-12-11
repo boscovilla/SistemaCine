@@ -1,16 +1,19 @@
-﻿using MediatR;
+﻿using Dominio.Entities;
+using MediatR;
 using Persistencia;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Commands.Peliculas
+namespace Aplicacion.Commands.Salas
 {
-    public class EliminaPelicula
+    public class AgregarSala
     {
         public class Ejecuta : IRequest
         {
-            public int PeliculaId { get; set; }
+            public int Capacidad { get; set; }
+            public string Numero { get; set; }
+            public string CineId { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -20,16 +23,17 @@ namespace Aplicacion.Commands.Peliculas
             {
                 _context = context;
             }
+
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var movie = await _context.Pelicula.FindAsync(request.PeliculaId);
-
-                if (movie == null)
+                var sala = new Sala()
                 {
-                    throw new Exception("No se encontro la Pelicula");
-                }
+                    Capacidad = request.Capacidad,
+                    Numero = request.Numero,
+                    CineId = request.CineId
+                };
 
-                _context.Pelicula.Remove(movie);
+                _context.Sala.Add(sala);
                 var result = await _context.SaveChangesAsync();
 
                 if (result > 0)
@@ -38,7 +42,7 @@ namespace Aplicacion.Commands.Peliculas
                 }
                 else
                 {
-                    throw new Exception("Error al eliminar la Pelicula");
+                    throw new Exception("Error al crear una nueva sala");
                 }
             }
         }

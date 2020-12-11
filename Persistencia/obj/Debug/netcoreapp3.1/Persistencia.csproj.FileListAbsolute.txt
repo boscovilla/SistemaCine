@@ -23,7 +23,6 @@ C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\ne
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csprojAssemblyReference.cache
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfoInputs.cache
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfo.cs
-C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CopyComplete
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.dll
 C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.pdb

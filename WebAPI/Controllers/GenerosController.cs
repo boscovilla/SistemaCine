@@ -1,5 +1,5 @@
-﻿using Aplicacion.Generos;
-using Dominio;
+﻿using Aplicacion.Commands.Generos;
+using Dominio.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

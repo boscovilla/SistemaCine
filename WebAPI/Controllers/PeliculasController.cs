@@ -1,4 +1,4 @@
-﻿using Dominio;
+﻿using Dominio.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Persistencia;
 using System.Collections.Generic;

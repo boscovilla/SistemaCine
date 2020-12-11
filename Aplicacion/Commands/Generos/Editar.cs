@@ -19,7 +19,7 @@ namespace Aplicacion.Commands.Generos
 
         public class Manejador : IRequestHandler<Ejecuta>
         {
-            public readonly SistemaCineContext _context;
+            private readonly SistemaCineContext _context;
             public Manejador(SistemaCineContext context)
             {
                 _context = context;
@@ -29,7 +29,6 @@ namespace Aplicacion.Commands.Generos
                 var genero = await _context.Genero.FindAsync(request.GeneroId);
                 if (genero == null)
                 {
-                    //   throw new Exception("El Genero No Existe");
                     throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el curso" });
                 }
 

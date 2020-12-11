@@ -1,16 +1,19 @@
-﻿using MediatR;
+﻿using Dominio.Entities;
+using MediatR;
 using Persistencia;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Commands.Peliculas
+namespace Aplicacion.Commands.Cines
 {
-    public class EliminaPelicula
+    public class CrearCine
     {
         public class Ejecuta : IRequest
         {
-            public int PeliculaId { get; set; }
+            public string Nombre { get; set; }
+            public string Direccion { get; set; }
+            public float PrecioEntradaGeneral { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -22,14 +25,14 @@ namespace Aplicacion.Commands.Peliculas
             }
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var movie = await _context.Pelicula.FindAsync(request.PeliculaId);
-
-                if (movie == null)
+                var cine = new Cine()
                 {
-                    throw new Exception("No se encontro la Pelicula");
-                }
+                    Nombre = request.Nombre,
+                    Direccion = request.Direccion,
+                    PrecioEntradaGeneral = request.PrecioEntradaGeneral
+                };
 
-                _context.Pelicula.Remove(movie);
+                _context.Cine.Add(cine);
                 var result = await _context.SaveChangesAsync();
 
                 if (result > 0)
@@ -38,7 +41,7 @@ namespace Aplicacion.Commands.Peliculas
                 }
                 else
                 {
-                    throw new Exception("Error al eliminar la Pelicula");
+                    throw new Exception("Error al crear registro");
                 }
             }
         }

@@ -1,15 +1,19 @@
-﻿using MediatR;
+﻿using Aplicacion.ManejadorError;
+using MediatR;
 using Persistencia;
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Commands.Peliculas
+namespace Aplicacion.Commands.Repartos
 {
-    public class EliminaPelicula
+    public class ActualizarReparto
     {
         public class Ejecuta : IRequest
         {
+            public int RepartoId { get; set; }
+            public int ActorId { get; set; }
             public int PeliculaId { get; set; }
         }
 
@@ -20,27 +24,29 @@ namespace Aplicacion.Commands.Peliculas
             {
                 _context = context;
             }
+
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var movie = await _context.Pelicula.FindAsync(request.PeliculaId);
-
-                if (movie == null)
+                var reparto = await _context.Reparto.FindAsync(request.RepartoId);
+                if (reparto == null)
                 {
-                    throw new Exception("No se encontro la Pelicula");
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { movie = "Error al listar Horarios" });
                 }
 
-                _context.Pelicula.Remove(movie);
-                var result = await _context.SaveChangesAsync();
+                reparto.ActorId = request.ActorId;
+                reparto.PeliculaId = request.PeliculaId;
 
+                var result = await _context.SaveChangesAsync();
                 if (result > 0)
                 {
                     return Unit.Value;
                 }
                 else
                 {
-                    throw new Exception("Error al eliminar la Pelicula");
+                    throw new Exception("Error al actualizar");
                 }
             }
+
         }
     }
 }

@@ -1,16 +1,18 @@
-﻿using MediatR;
+﻿using Aplicacion.ManejadorError;
+using MediatR;
 using Persistencia;
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Commands.Peliculas
+namespace Aplicacion.Commands.Cines
 {
-    public class EliminaPelicula
+    public class EliminarCine
     {
         public class Ejecuta : IRequest
         {
-            public int PeliculaId { get; set; }
+            public int CineId { get; set; }
         }
 
         public class Manejador : IRequestHandler<Ejecuta>
@@ -22,14 +24,13 @@ namespace Aplicacion.Commands.Peliculas
             }
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var movie = await _context.Pelicula.FindAsync(request.PeliculaId);
-
-                if (movie == null)
+                var cine = await _context.Cine.FindAsync(request.CineId);
+                if (cine == null)
                 {
-                    throw new Exception("No se encontro la Pelicula");
+                    throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el cine" });
                 }
 
-                _context.Pelicula.Remove(movie);
+                _context.Cine.Remove(cine);
                 var result = await _context.SaveChangesAsync();
 
                 if (result > 0)
@@ -38,7 +39,7 @@ namespace Aplicacion.Commands.Peliculas
                 }
                 else
                 {
-                    throw new Exception("Error al eliminar la Pelicula");
+                    throw new Exception("Error al Eliminar");
                 }
             }
         }

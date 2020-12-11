@@ -1,15 +1,17 @@
-﻿using MediatR;
+﻿using Dominio.Entities;
+using MediatR;
 using Persistencia;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Aplicacion.Commands.Peliculas
+namespace Aplicacion.Commands.Repartos
 {
-    public class EliminaPelicula
+    public class AgregarReparto
     {
         public class Ejecuta : IRequest
         {
+            public int ActorId { get; set; }
             public int PeliculaId { get; set; }
         }
 
@@ -20,16 +22,16 @@ namespace Aplicacion.Commands.Peliculas
             {
                 _context = context;
             }
+
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var movie = await _context.Pelicula.FindAsync(request.PeliculaId);
-
-                if (movie == null)
+                var reparto = new Reparto()
                 {
-                    throw new Exception("No se encontro la Pelicula");
-                }
+                    ActorId = request.ActorId,
+                    PeliculaId = request.PeliculaId
+                };
 
-                _context.Pelicula.Remove(movie);
+                _context.Reparto.Add(reparto);
                 var result = await _context.SaveChangesAsync();
 
                 if (result > 0)
@@ -38,9 +40,10 @@ namespace Aplicacion.Commands.Peliculas
                 }
                 else
                 {
-                    throw new Exception("Error al eliminar la Pelicula");
+                    throw new Exception("Error al crear un nuevo reparto");
                 }
             }
         }
+
     }
 }

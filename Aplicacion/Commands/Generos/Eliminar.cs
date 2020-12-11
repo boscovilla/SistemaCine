@@ -33,7 +33,7 @@ namespace Aplicacion.Commands.Generos
                     throw new ManejadorExcepcion(HttpStatusCode.NotFound, new { curso = "No se encontro el curso" });
                 }
 
-                _context.Remove(genero);
+                _context.Genero.Remove(genero);
 
                 var resultado = await _context.SaveChangesAsync();
 
