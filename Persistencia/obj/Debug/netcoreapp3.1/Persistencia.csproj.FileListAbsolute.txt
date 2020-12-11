@@ -13,3 +13,17 @@ C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\Sis
 C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.dll
 C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.pdb
 C:\Users\JUAN BOSCO\Desktop\TRABAJOS uU 2S\JORGE\Sistema Cine Proyecto Final\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.genruntimeconfig.cache
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Persistencia.deps.json
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Persistencia.runtimeconfig.json
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Persistencia.runtimeconfig.dev.json
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Persistencia.dll
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Persistencia.pdb
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csprojAssemblyReference.cache
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.csproj.CopyComplete
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.dll
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.pdb
+C:\Users\Lenovo\Desktop\TAREA DISTRIBUIDOS\SistemaCine\Persistencia\obj\Debug\netcoreapp3.1\Persistencia.genruntimeconfig.cache
