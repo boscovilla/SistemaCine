@@ -1,8 +1,9 @@
-﻿using Dominio.Entities;
+﻿using Aplicacion.Commands.Cines;
+using Dominio.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Persistencia;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
 {
@@ -10,16 +11,41 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class CinesController : ControllerBase
     {
-        private readonly SistemaCineContext context;
-        public CinesController(SistemaCineContext _context)
+        private readonly IMediator _mediator;
+        public CinesController(IMediator mediator)
         {
-            this.context = _context;
+            _mediator = mediator;
         }
 
         [HttpGet]
-        public IEnumerable<Cine> Get()
+        public async Task<ActionResult<List<Cine>>> Get()
         {
-            return context.Cine.ToList();
+            return await _mediator.Send(new ConsultaCine.ListaCine());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cine>> Detalle(int id)
+        {
+            return await _mediator.Send(new ConsultaCinePorId.CineUnico { CineId = id });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Unit>> Crear(CrearCine.Ejecuta data)
+        {
+            return await _mediator.Send(data);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Unit>> Editar(int id, EditarCine.Ejecuta data)
+        {
+            data.CineId = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id)
+        {
+            return await _mediator.Send(new EliminarCine.Ejecuta { CineId = id });
         }
     }
 }
